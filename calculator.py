@@ -179,14 +179,4 @@ def evaluate(postfix):
     return opStack.pop()
 
 
-print(evaluate(infixToPostfix(splitExpression("-5.78+-(4-2.23)+sin(0)*cos(1)/(1+tan(2*-ln(-3+2*(1.23+arcsin(99.111"))))
-
-
-
-
-
-
-
-
-
-
+print(evaluate(infixToPostfix(splitExpression("-5+-4"))))
