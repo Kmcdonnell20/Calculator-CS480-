@@ -178,5 +178,10 @@ def evaluate(postfix):
     # Finally, return the remaining result from the stack
     return opStack.pop()
 
-
-print(evaluate(infixToPostfix(splitExpression("-5+-4"))))
+#Evaluate user input expression and returns the result
+def evaluateInput(expression):
+    #Split expression, convert it to postfix and evaluate the final result
+    try:
+        return evaluate(infixToPostfix(splitExpression(expression)))
+    except Exception as e:
+        return "Error: " + str(e)
