@@ -19,26 +19,16 @@ st.markdown("""
         """)
 
 
-# Function triggered when input is given
-def evaluate(expression):
-    # Validate expression if given
-    if expression != "":
-        result = evaluateInput(expression)
-        if isinstance(result, str):
-            st.error(result)
-        else:
-            st.success(result)
-
-
 # Create a text field that allows the user to give input
-expression = st.text_input("Input your expression here:", on_change=evaluate)
+expression = st.text_input("Input your expression here:")
 
 # Create a button that triggers the calculation if an input is given
-if st.button("Evaluate"):
+col1, col2, col3 = st.columns([1, 1, 1])
+if col2.button("Evaluate"):
     # Validate expression if given
     if expression != "":
         result = evaluateInput(expression)
         if isinstance(result, str):
-            st.error(result)
+            col2.error(result)
         else:
-            st.success(result)
+            col2.success(result)
